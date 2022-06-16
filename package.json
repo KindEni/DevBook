@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "webpack serve --devtool inline-source-map --hot --config webpack.client.config.js",
-    "client:build": "webpack --config webpack.client.build.config.js"
+    "client:build": "webpack --config webpack.client.build.config.js",
+    "server": "nodemon --exec babel-node --watch src/server src/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/KindEni/DevBook#readme",
   "devDependencies": {
     "@babel/core": "^7.18.5",
+    "@babel/node": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "babel-loader": "^8.2.5",
@@ -35,8 +37,17 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "@graphql-tools/schema": "^8.3.14",
+    "apollo-server-express": "^3.8.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "helmet": "^5.1.0",
+    "nodemon": "^2.0.16",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "winston": "^3.7.2"
   }
 }
