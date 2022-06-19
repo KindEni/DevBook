@@ -38,6 +38,7 @@ const resolvers = {
         id: posts.length + 1,
       };
       posts.push(postObject);
+      logger.log({ level: 'info', message: 'Post was created' });
       return postObject;
       /*  This means a Post Type should be return, which is exactly what the addPost function does.
 
