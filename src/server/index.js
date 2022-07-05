@@ -3,7 +3,16 @@ import helmet from "helmet";
 import cors from "cors";
 import compress from "compression";
 import path from "path";
-import services from "./services";
+import db from './database';
+import servicesLoader from "./services";
+
+
+
+const utils = {
+  db,
+};
+
+const services = servicesLoader(utils);
 
 const app = express();
 

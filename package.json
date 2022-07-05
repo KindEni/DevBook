@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "webpack serve --devtool inline-source-map --hot --config webpack.client.config.js",
     "client:build": "webpack --config webpack.client.build.config.js",
-    "server": "nodemon --exec babel-node --watch src/server src/server/index.js"
+    "server": "nodemon --exec babel-node --require @storybook/babel-plugin-require-context-hook --watch src/server src/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,12 +24,15 @@
     "@babel/node": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
+    "@storybook/babel-plugin-require-context-hook": "^1.0.1",
     "babel-loader": "^8.2.5",
+    "babel-plugin-transform-require-context": "^0.1.1",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "require-context": "^1.1.0",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.73.0",
@@ -44,10 +47,13 @@
     "express": "^4.18.1",
     "graphql": "^16.5.0",
     "helmet": "^5.1.0",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.16",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
+    "save-dev": "^0.0.1-security",
+    "sequelize": "^6.21.0",
     "winston": "^3.7.2"
   }
 }
